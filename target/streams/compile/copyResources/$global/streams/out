@@ -1,0 +1,8 @@
+[debug] Copy resource mappings: 
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/application.conf,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/application.conf)
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/evolutions,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/evolutions)
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/evolutions/default,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/evolutions/default)
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/evolutions/default/1.sql,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/evolutions/default/1.sql)
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/logback.xml,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/logback.xml)
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/messages,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/messages)
+[debug] 	(/Users/apple/play_lessons/lesson_2/play-scala-myapp/conf/routes,/Users/apple/play_lessons/lesson_2/play-scala-myapp/target/scala-2.12/classes/routes)

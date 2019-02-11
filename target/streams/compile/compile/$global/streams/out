@@ -1,0 +1,7 @@
+[error] /Users/apple/play_lessons/lesson_2/play-scala-myapp/app/controllers/LoginController.scala:28:26: no arguments allowed for nullary method apply: ()play.twirl.api.HtmlFormat.Appendable in object login
+[error]     Ok( views.html.login(loginUserForm) )
+[error]                          ^
+[error] /Users/apple/play_lessons/lesson_2/play-scala-myapp/app/controllers/LoginController.scala:36:38: no arguments allowed for nullary method apply: ()play.twirl.api.HtmlFormat.Appendable in object login
+[error]         BadRequest( views.html.login(errors) )
+[error]                                      ^
+[error] two errors found
