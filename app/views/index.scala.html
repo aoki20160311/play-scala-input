@@ -1,11 +1,26 @@
 @(message:String, data:Seq[models.Person])(implicit request: MessagesRequestHeader)
 
+    @import java.util.Date
+    @import java.math.BigDecimal
+    @import utilcalc._
+
+    @*****************************
+    * Declaring reusable blocks  *
+    *****************************@
+    @d(tel: Int) = {
+      @if(tel != null) {
+        @{BigDecimal.valueOf( tel - 10 )}
+      } else {
+        ---
+      }
+    }
+
 
 @main("Index Page", "Hello", "copyright 2018.") {
     <p>@Html(message)</p>
     <ul>
     @for(item<-data){
-        <li>@item.id: @item.name [@item.mail, @item.tel] @{item.tel + 10}</li>
+        <li>@item.id: @item.name [@item.mail, @item.tel] @CalcDml.CalcCv(item.tel)</li>
     }
     </ul>
 }
