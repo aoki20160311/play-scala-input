@@ -14,10 +14,10 @@ GET   /   controllers.HomeController.index()
 #GET     /login controllers.LoginController.loginInit
 #POST    /login controllers.LoginController.loginSubmit
 
-GET   /add   controllers.HomeController.add()
-POST   /create   controllers.HomeController.create()
-
-GET   /show/:id   controllers.HomeController.show(id:Int)
+#GET   /add   controllers.HomeController.add()
+#POST   /create   controllers.HomeController.create()
+#
+#GET   /show/:id   controllers.HomeController.show(id:Int)
 
 
 
