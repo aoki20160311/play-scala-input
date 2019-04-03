@@ -1,48 +1,12 @@
-@(title:String, header:String, footer:String, message:String, data:Seq[models.Person])(implicit request: MessagesRequestHeader)
+@(message:String, data:Seq[models.Person])(implicit request: MessagesRequestHeader)
 
-    @import java.util.Date
-    @import java.math.BigDecimal
-    @import utilcalc._
-
-    @*****************************
-    * Declaring reusable blocks  *
-    *****************************@
-    @d(tel: Int) = {
-      @if(tel != null) {
-        @{BigDecimal.valueOf( tel - 10 )}
-      } else {
-        ---
-      }
+@main("Index Page", "Hello", "copyright 2018.") {
+    <p>@Html(message)</p>
+    <ul>
+    @for(item<-data){
+        <li>@item.id: @item.name [@item.mail, @item.tel]</li>
     }
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>@title</title>
-        <link rel="stylesheet" media="screen"
-        href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png"
-        href="@routes.Assets.versioned("images/favicon.png")">
-    </head>
-    <body>
-        <header class="row">
-            <div class="header">@header</div>
-            <h1>@title</h1>
-        </header>
-        <article class="row">
-            <p>@Html(message)</p>
-            <ul>
-            @for(item<-data){
-                <li>@item.id: @item.name [@item.mail, @item.tel] @CalcDml.CalcCv(item.tel)</li>
-            }
-            </ul>
-        </article>
-        <footer class="row">
-            <p>@footer</p>
-        </footer>
-        <script src="@routes.Assets.versioned("javascripts/main.js")"
-        type="text/javascript"></script>
-    </body>
-</html>
+    </ul>
+}
 
 

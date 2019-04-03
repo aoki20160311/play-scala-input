@@ -26,7 +26,7 @@ class PersonRepository @Inject()
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def name = column[String]("name")
     def mail = column[String]("mail")
-    def tel = column[Int]("tel")
+    def tel = column[String]("tel")
 
 
     def * = (id, name, mail, tel) <>
@@ -35,6 +35,31 @@ class PersonRepository @Inject()
 
   def list(): Future[Seq[Person]] = db.run {
     people.result
+  }
+
+  def create(name: String, mail:String, tel:String):Future[Int] =
+    db.run(
+      people += Person(0, name, mail, tel)
+    )
+
+  def get(id:Int): Future[Person] = db.run {
+    people.filter(_.id === id).result.head
+  }
+
+  def update(id:Int, name: String, mail:String, tel:String):Future[Int] = {
+    db.run(
+      people.insertOrUpdate(Person(id, name, mail, tel))
+    )
+  }
+
+  def delete(id:Int):Future[Int] = {
+    db.run(
+      people.filter(_.id === id).delete
+    )
+  }
+
+  def find(s:String): Future[Seq[Person]] = db.run {
+    people.filter(_.name === s).result
   }
 
 
